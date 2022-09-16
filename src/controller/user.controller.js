@@ -23,9 +23,9 @@ const userController = {
       })
   },
   detailofname: (req, res) => {
-    const id = req.params.username
+    const nama = req.params.username
     userModel
-      .Detail(id)
+      .Detail(nama)
       .then((results) => {
         res.json(results)
       })
