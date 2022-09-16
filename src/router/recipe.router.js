@@ -13,7 +13,7 @@ router
   .get('/recipes', list)
   .get('/recipes/:id', detail)
   .get('/nama/:nama_recipe', detailname)
-  .post('/recipes1', insert)
+  .post('/recipes/tambah', insert)
   .put('/recipes/:id', update)
   .delete('/recipes/:id', destroy)
 
