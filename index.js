@@ -12,7 +12,7 @@ const recipeRouter = require('./src/router/recipe.router.js')
 
 const app = express()
 
-// try {
+// try
 app.use(helmet({ crossOriginResourcePolicy: false }))
 app.use(xss())
 app.use(bodyParser.json())
