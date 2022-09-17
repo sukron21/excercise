@@ -23,7 +23,7 @@ const recipeController = {
       })
   },
   detailname: (req, res) => {
-    const id = req.params.nama_recipe
+    const id = req.params.name_recipe
     recipeModel
       .nameDetail(id)
       .then((result) => {
@@ -35,9 +35,9 @@ const recipeController = {
   },
   insert: (req, res) => {
     // eslint-disable-next-line camelcase
-    const { id, nama_recipe, ingredients } = req.body
+    const { id, name_recipe, ingredients } = req.body
     recipeModel
-      .store(id, nama_recipe, ingredients)
+      .store(id, name_recipe, ingredients)
       .then((result) => {
         res.json('Account added successfully')
       })
@@ -48,9 +48,9 @@ const recipeController = {
   update: (req, res) => {
     const id = req.params.id
     // eslint-disable-next-line camelcase
-    const { nama_recipe, ingredients } = req.body
+    const { name_recipe, ingredients } = req.body
     recipeModel
-      .updateAccount(id, nama_recipe, ingredients)
+      .updateAccount(id, name_recipe, ingredients)
       .then((result) => {
         res.json('Account Updated')
       })
