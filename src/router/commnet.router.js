@@ -1,15 +1,16 @@
 // deklare exprees
 const express = require('express')
+// D:\belajar pijar\excercise_beginner_backend\src\controller\comment.controller.js
 const { list, destroy, detail, insert, update, detailofname } = require('../controller/comment.controller')
 
 const router = express.Router()
 
 router
-  .get('/comments', list)
-  .get('/comments/:id', detail)
-  .get('/comments/:username', detailofname)
-  .post('/comments', insert)
-  .put('/comments/:id', update)
-  .delete('/comments/:id', destroy)
+  .get('/commen', list)
+  .get('/commen/:id', detail)
+  .get('/commen/:username', detailofname)
+  .post('/commen', insert)
+  .put('/commen/:id', update)
+  .delete('/commen/:id', destroy)
 
 module.exports = router
