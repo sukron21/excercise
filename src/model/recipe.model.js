@@ -5,7 +5,7 @@ const recipeModel = {
   // router list
   selectAll: () => {
     return new Promise((resolve, reject) => {
-      db.query('SELECT * FROM recipe ORDER BY nama_recipe', (err, result) => {
+      db.query('SELECT * FROM recipe ORDER BY name_recipe', (err, result) => {
         if (err) {
           reject(err)
         } else {
@@ -24,9 +24,9 @@ const recipeModel = {
       })
     })
   },
-  nameDetail: (nama_recipe) => {
+  nameDetail: (name_recipe) => {
     return new Promise((resolve, reject) => {
-      db.query(`select *from recipe where nama_recipe='${nama_recipe}'`,
+      db.query(`select *from recipe where name_recipe='${name_recipe}'`,
         (err, result) => {
           if (err) {
             reject(err)
@@ -36,12 +36,12 @@ const recipeModel = {
     })
   },
   // router - insert
-  store: (id, nama_recipe, ingredients) => {
+  store: (id, name_recipe, ingredients) => {
     return new Promise((resolve, reject) => {
       db.query(`
-            INSERT INTO recipe (id,nama_recipe,ingredients)
+            INSERT INTO recipe (id,name_recipe,ingredients)
             VALUES
-            (${id}, '${nama_recipe}','${ingredients}')
+            (${id}, '${name_recipe}','${ingredients}')
             `, (err, res) => {
         if (err) {
           reject(err)
@@ -51,12 +51,12 @@ const recipeModel = {
       )
     })
   },
-  updateAccount: (id, nama_recipe, ingredients) => {
+  updateAccount: (id, name_recipe, ingredients) => {
     return new Promise((resolve, reject) => {
       db.query(
             `
               UPDATE recipe SET
-              nama_recipe = COALESCE('${nama_recipe}', nama_recipe),
+              name_recipe = COALESCE('${name_recipe}', nama_recipe),
               ingredients = COALESCE('${ingredients}', ingredients)
               WHERE id = ${id}
               `,
