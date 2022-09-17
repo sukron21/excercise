@@ -6,13 +6,14 @@ const commentModel = {
   selectAll: () => {
     return new Promise((resolve, reject) => {
       // db.query('SELECT * FROM users ORDER BY username', (err, result) => {
-      db.query('SELECT * FROM comment', (err, result) => {
-        if (err) {
-          reject(err)
-        } else {
-          resolve(result)
-        }
-      })
+      db.query('select* from comment',
+        (err, result) => {
+          if (err) {
+            reject(err)
+          } else {
+            resolve(result)
+          }
+        })
     })
   },
   selectDetail: (id) => {
@@ -27,7 +28,7 @@ const commentModel = {
   },
   Detail: (id_user) => {
     return new Promise((resolve, reject) => {
-      db.query(`select *from comment where comment='${id_user}'`, (err, results) => {
+      db.query(`select *from comment where id_user='${id_user}'`, (err, results) => {
         if (err) {
           reject(err)
         }
