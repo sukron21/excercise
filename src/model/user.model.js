@@ -4,8 +4,8 @@ const userModel = {
   // router list
   selectAll: () => {
     return new Promise((resolve, reject) => {
-      // db.query('SELECT * FROM users ORDER BY username', (err, result) => {
-      db.query('SELECT * FROM users', (err, result) => {
+      db.query('SELECT * FROM users ORDER BY username asc', (err, result) => {
+      // db.query('SELECT * FROM users', (err, result) => {
         if (err) {
           reject(err)
         } else {
