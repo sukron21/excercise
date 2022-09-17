@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-const commentModel = require('../model/comment.model')
+const commentModel = require('../model/comment.model.js')
 const commentController = {
   // method
   list: (req, res) => {
