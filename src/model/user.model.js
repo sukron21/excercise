@@ -1,19 +1,28 @@
+/* eslint-disable no-undef */
 
 const db = require('../config/db')
 const userModel = {
   // router list
-  selectAll: () => {
-    return new Promise((resolve, reject) => {
-      db.query('SELECT * FROM users ORDER BY username asc', (err, result) => {
-      // db.query('SELECT * FROM users', (err, result) => {
-        if (err) {
-          reject(err)
-        } else {
-          resolve(result)
-        }
-      })
+  list: (limit, offset) => new Promise((resolve, reject) => {
+    db.query(`SELECT * FROM users LIMIT ${limit} OFFSET ${offset}`, (err, result) => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve(result)
+      }
     })
-  },
+  }),
+  //   return new Promise((resolve, reject) => {
+  //     db.query('SELECT * FROM users ORDER BY username asc', (err, result) => {
+  //     // db.query('SELECT * FROM users', (err, result) => {
+  //       if (err) {
+  //         reject(err)
+  //       } else {
+  //         resolve(result)
+  //       }
+  //     })
+  //   })
+  // },
   selectDetail: (id) => {
     return new Promise((resolve, reject) => {
       db.query(`SELECT *FROM users where id=${id}`, (err, result) => {
