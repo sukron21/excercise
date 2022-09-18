@@ -1,5 +1,4 @@
-
-
+/* eslint-disable camelcase */
 
 const db = require('../config/db')
 const recipeModel = {
