@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 require('dotenv').config()
 
 const express = require('express')
@@ -9,6 +10,7 @@ const xss = require('xss-clean')
 const a = process.env.PORT
 const userRouter = require('./src/router/user.routes.js')
 const recipeRouter = require('./src/router/recipe.router.js')
+const komenRouter = require('./src/router/komen.router.js')
 
 const app = express()
 
@@ -17,6 +19,7 @@ app.use(helmet({ crossOriginResourcePolicy: false }))
 app.use(xss())
 app.use(bodyParser.json())
 app.use(cors())
+app.use(komenRouter)
 app.use(recipeRouter)
 app.use(userRouter)
 // } catch {
