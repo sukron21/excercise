@@ -2,8 +2,11 @@ const userModel = require('../model/user.model')
 const userController = {
   // method
   list: (req, res) => {
+    const limit = parseInt(req.query.limit) || 3
+    const page = parseInt(req.query.page) || 1
+    const offset = (page - 1) * limit
     userModel
-      .selectAll()
+      .list(limit, offset)
       .then((result) => {
         res.json(result)
       })
