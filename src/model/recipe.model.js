@@ -57,7 +57,7 @@ const recipeModel = {
       db.query(
             `
               UPDATE recipe SET
-              name_recipe = COALESCE('${name_recipe}', nama_recipe),
+              name_recipe = COALESCE('${name_recipe}', name_recipe),
               ingredients = COALESCE('${ingredients}', ingredients)
               WHERE id = ${id}
               `,
