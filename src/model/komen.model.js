@@ -1,5 +1,5 @@
 const db = require('../config/db')
-const recipeModel = {
+const komenModel = {
   // router list
   selectAll: () => {
     return new Promise((resolve, reject) => {
@@ -79,4 +79,4 @@ const recipeModel = {
   //   }
 
 }
-module.exports = recipeModel
+module.exports = komenModel
