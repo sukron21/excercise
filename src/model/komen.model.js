@@ -40,7 +40,7 @@ const komenModel = {
       db.query(`
               INSERT INTO comment (id,comments,id_user,id_recipe)
               VALUES
-              (${id}, '${comments}','${id_user}','${id_recipe}')
+              (${id}, '${comments}',${id_user},${id_recipe})
               `, (err, res) => {
         if (err) {
           reject(err)
@@ -56,8 +56,8 @@ const komenModel = {
               `
                 UPDATE comment SET
                 comments = COALESCE('${comments}', comments),
-                id_user = COALESCE('${id_user}', id_user),
-                id_recipe = COALESCE('${id_recipe}', id_recipe)
+                id_user = COALESCE(${id_user}, id_user),
+                id_recipe = COALESCE(${id_recipe}, id_recipe)
                 WHERE id = ${id}
                 `,
               (err, res) => {
