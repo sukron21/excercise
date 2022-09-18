@@ -56,8 +56,8 @@ const komenModel = {
               `
                 UPDATE comment SET
                 comments = COALESCE('${comments}', comments),
-                id_user = COALESCE(${id_user}, id_user),
-                id_recipe = COALESCE(${id_recipe}, id_recipe)
+                id_user = COALESCE('${id_user}', id_user),
+                id_recipe = COALESCE('${id_recipe}', id_recipe)
                 WHERE id = ${id}
                 `,
               (err, res) => {
