@@ -1,19 +1,16 @@
 // deklare exprees
 const express = require('express')
-const {
-  list
-  // ,destroy, detail, insert, update, detailofname
-} =
+const { list, destroy, detail, insert, update, detailname } =
   require('../controller/koment.kontrol')
 
 const router = express.Router()
 
 router
-  .get('/kontrol', list)
-  // .get('/user/:id', detail)
-  // .get('/name/:username', detailofname)
-  // .post('/user', insert)
-  // .put('/user/:id', update)
-  // .delete('/user/:id', destroy)
+  .get('/komen', list)
+  .get('/komen/:id', detail)
+  .get('/komen/:id_recipe', detailname)
+  .post('/komen/tambah', insert)
+  .put('/komen/:id', update)
+  .delete('/komen/:id', destroy)
 
 module.exports = router
