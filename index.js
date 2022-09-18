@@ -14,18 +14,18 @@ const komenRouter = require('./src/router/komen.router.js')
 
 const app = express()
 
-// try
-app.use(helmet({ crossOriginResourcePolicy: false }))
-app.use(xss())
-app.use(bodyParser.json())
-app.use(cors())
-app.use(komenRouter)
-app.use(recipeRouter)
-app.use(userRouter)
-// } catch {
-//   // eslint-disable-next-line no-undef
-//   console.error(error)
-// }
+try {
+  app.use(helmet({ crossOriginResourcePolicy: false }))
+  app.use(xss())
+  app.use(bodyParser.json())
+  app.use(cors())
+  app.use(komenRouter)
+  app.use(recipeRouter)
+  app.use(userRouter)
+} catch {
+  // eslint-disable-next-line no-undef
+  console.error(error)
+}
 
 // jalankan express
 
