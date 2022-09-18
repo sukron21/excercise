@@ -1,8 +1,8 @@
-const recipeModel = require('../model/komen.model')
-const recipeController = {
+const komenModel = require('../model/komen.model')
+const komenController = {
   // method
   list: (req, res) => {
-    recipeModel
+    komenModel
       .selectAll()
       .then((result) => {
         res.json(result)
@@ -70,4 +70,4 @@ const recipeController = {
 //   }
 }
 
-module.exports = recipeController
+module.exports = komenController
