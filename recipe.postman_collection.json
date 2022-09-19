@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "d338f510-86cb-4a23-8c97-2a0e8c213462",
+		"name": "recipe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23388167"
+	},
+	"item": [
+		{
+			"name": "get all data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/recipes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"recipes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by nama",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/nama/loream sandwich",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"nama",
+						"loream sandwich"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"id\": 7,\r\n            \"nama_recipe\": \"roko\",\r\n            \"ingredients\": \"udud\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/recipes/tambah",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"recipes",
+						"tambah"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \r\n            \"nama_recipe\": \"siomay\",\r\n            \"ingredients\": \"tepung\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/recipes/7",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"recipes",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/recipes/7",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"recipes",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
